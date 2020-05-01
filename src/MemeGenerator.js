@@ -24,7 +24,8 @@ class MemeGenerator extends Component {
     }
 
     handleChange(event){
-
+        const {name, value} = event.target
+        this.setState({[name]: value})
     }
 
     render() {
@@ -32,7 +33,7 @@ class MemeGenerator extends Component {
             <div>
                 <form className ="meme-form">
 
-                    <label>Top Text</label>
+                    
                     <input 
                         type = "text"
                         placeholder = "top text"
@@ -43,7 +44,7 @@ class MemeGenerator extends Component {
 
                     <br />
 
-                    <label>Bottom Text</label>
+                    
                     <input 
                         type = "texts"
                         placeholder ="bottom text"
@@ -54,6 +55,8 @@ class MemeGenerator extends Component {
 
                     <button>Gen</button>
                 </form>
+
+            <h1>{this.state.topText} {this.state.bottomText}</h1>
 
             </div>
         )
